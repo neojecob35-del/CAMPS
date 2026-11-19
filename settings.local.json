@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(node --check server.js)",
+      "PowerShell(git -C G:\\\\apps\\\\video-app diff --check)",
+      "PowerShell(git -C G:\\\\apps\\\\video-app status --short)",
+      "PowerShell(Test-Path 'C:\\\\ffmpeg\\\\ffmpeg.exe'; \\(Get-Command ffmpeg\\).Source; yt-dlp --config-location yt-dlp.conf --dump-user-agent)",
+      "PowerShell(yt-dlp --config-location G:/apps/video-app/yt-dlp.conf --dump-user-agent)",
+      "PowerShell(node --check G:/apps/video-app/server.js)",
+      "PowerShell(ffmpeg -hide_banner -loglevel error -f lavfi -i \"testsrc=size=320x240:rate=30\" -f lavfi -i \"sine=frequency=1000:sample_rate=48000\" -t 1 -c:v libx264 -preset medium -crf 18 -c:a aac -b:a 192k -f mp4 -movflags +frag_keyframe+empty_moov NUL)",
+      "PowerShell(yt-dlp --config-location G:/apps/video-app/yt-dlp.conf --version)",
+      "PowerShell(Get-NetTCPConnection -LocalPort 8090 -State Listen -ErrorAction SilentlyContinue | ForEach-Object { $p = Get-CimInstance Win32_Process -Filter \"ProcessId = $\\($_.OwningProcess\\)\"; [pscustomobject]@{ Pid = $_.OwningProcess; Process = $p.Name; CommandLine = $p.CommandLine } })"
+    ]
+  }
+}
